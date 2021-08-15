@@ -1,0 +1,33 @@
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <ol>
+  {{> post-info post }}
+  </ol>
+  {{/each}}
+  <div>
+    <h3>
+      Form for CAR Enthusiasts
+    </h3>
+    <h4>
+      Since 2021
+    </h4>
+    <p>
+      If you like cars and want to talk to other people that also do, this is the form for you. Join our community and
+      post and comment on other members rides.
+    </p>
+    <p>
+      Posts {{posts.length}}
+    </p>
+    <p>
+      Users {{users.length}}
+    </p>
+  </div>
+  <div>
+    <h3>
+      Future Site Updates
+    </h3>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+</ol>

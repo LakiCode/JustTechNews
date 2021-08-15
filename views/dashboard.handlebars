@@ -1,0 +1,43 @@
+<section>
+  <h2>Create new car Review</h2>
+
+  <form class="new-post-form" enctype="multipart/form-data" method="POST" >
+    <div>
+      <label for="post-carmaker">Car Maker</label>
+      <input type="text" id="post-carmaker" name="post-carmaker" />
+    </div>
+        <div>
+      <label for="post-carmodel">Car Model</label>
+      <input type="text" id="post-carmodel" name="post-carmodel" />
+    </div>
+        <div>
+      <label for="post-carbody">Car Body</label>
+      <input type="text" id="post-carbody" name="post-carbody" />
+    </div>
+    <div>
+      <label for="post-img">Your Car Image</label>
+      <input type="file" id="post-img" name="post-img" accept="image/*" />
+    </div>
+    <div>
+      <label for="post-carbody">Car Review</label>
+      <input type="text" id="post-review" name="post-review" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS  just_tech_news_db;
+DROP DATABASE IF EXISTS mustache_cars_db;
 
-CREATE DATABASE  just_tech_news_db;
+CREATE DATABASE mustache_cars_db;

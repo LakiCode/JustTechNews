@@ -1,0 +1,30 @@
+<article class="post">
+  <div class="box">
+  <div class="Car_name">
+      Car Model: {{car_model}}
+    </div>
+    <!-- add car image to show in detaild not on dashboard -->
+    <div class="carImg">
+      <a href="{{car_img}}" target="_blank"> Car image: {{car_img}}</a>
+    </div>
+    <div class="meta">
+      <ol>
+      <li>Car owner: {{user.username}}</li>
+      <li>Car Maker: {{car_maker}}</li>
+     <li>Car body: {{car_body}}</li>
+      </ol>
+
+     
+    </div>
+    <div class="review">
+      Review: {{review}}
+    </div>
+    <div>
+       Review created on: {{created_at}}
+    </div>
+  </div>
+  </div>
+  <div class="meta">
+    <a href="/post/{{id}}"> Comments:{{comments.length}}</a>
+  </div>
+</article>

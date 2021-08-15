@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Mustache Mustangs</title>
+</head>
+
+<body>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <h1 class="title has-text-centered"> Mustache Mustangs </h1>
+          </a>
+        </div>
+
+      <div class="navbar-item navbar-end">
+        {{#if loggedIn}}
+        <div class="buttons">
+        <a href="/dashboard" class="button is-info"><strong> Dashboard</strong></a>
+        <button id="logout" class="button is-info">logout</button>
+        {{else}}
+        <a href="/login" class="navbar-item title-3">
+        <strong>Login</strong>
+        </a>
+        <a href="/signin" class="navbar-item title-3">
+        <strong>Sign Up</strong>
+        </a>
+        {{/if}}
+      </div>
+      </div>
+    </nav>
+  </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p> <em> This was created by the</em> <a href="https://github.com/AZBDaniel/mustache_cars"><strong> Mustache Mustangs </strong></p> </a>
+      </div>
+    </footer>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+</html>
