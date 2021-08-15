@@ -1,33 +1,34 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-const multer = require('multer');
+//const multer = require('multer');
+const upload = require('../../config/multer.js');
 //const { request } = require('express');
 const path = require('path');
+const fileWorker = require('../../controllers/api/');
 
 //define storage for the images
-
+/*
 const ImgStorage = multer.diskStorage({
   //file destination
   destination: function (req, file, callback) {
     callback(null, '/public/images/');
   },
   filename: function (req, file, callback) {
+    console.log('file in filename ', file);
     callback(
       null,
       file.originalname + '-' + Date.now() + path.extname(file.originalname)
     );
   },
 });
+*/
 
+/*
+const ImgStorage = multer.memoryStorage();
 //upload parametars for multer
-const upload = multer({
-  storage: ImgStorage,
-  limit: {
-    fieldSize: 1024 * 1024 * 3,
-  },
-}).single('post-img');
-
+const upload = multer({ storage: ImgStorage });
+*/
 // get all users
 router.get('/', (req, res) => {
   console.log('======================');
@@ -117,14 +118,16 @@ router.post('/', withAuth, (req, res) => {
  */
 //const upload = multer().single('post-img')
 
-router.post('/', withAuth, upload, function (req, res) {
-  console.log(req.file);
+router.post('/', withAuth, upload.single('car_img'), function (req, res, next) {
+  console.log(req);
   Post.create({
     car_maker: req.body.car_maker,
     car_model: req.body.car_model,
     car_body: req.body.car_body,
     review: req.body.review,
-    car_img: req.file.filename,
+    type: req.file.mimetype,
+    car_img: req.file.originalname,
+    data: req.file.buffer,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))

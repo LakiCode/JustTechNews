@@ -1,11 +1,11 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const car_maker = document.querySelector('input[name="post-carmaker"]').value;
-  const car_model = document.querySelector('input[name="post-carmodel"]').value;
-  const car_body = document.querySelector('input[name="post-carbody"]').value;
-  const car_img = document.querySelector('input[name="post-img"]').value;
-  const review = document.querySelector('input[name="post-review"]').value;
+  const car_maker = document.querySelector('input[name="car_maker"]').value;
+  const car_model = document.querySelector('input[name="car_maker"]').value;
+  const car_body = document.querySelector('input[name="car_maker"]').value;
+  const car_img = document.querySelector('input[name="car_img"]').value;
+  const review = document.querySelector('input[name="car_review"]').value;
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',

@@ -19,7 +19,12 @@ Post.init(
     },
     car_img: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    type: {
+      type: DataTypes.STRING,
+    },
+    data: {
+      type: DataTypes.BLOB('long'),
     },
     car_maker: {
       type: DataTypes.STRING,

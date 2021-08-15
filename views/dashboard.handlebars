@@ -1,26 +1,26 @@
 <section>
   <h2>Create new car Review</h2>
 
-  <form class="new-post-form" enctype="multipart/form-data" method="POST" >
+  <form class="new-post-form" enctype="multipart/form-data" method="POST"  action='/api/posts/'>
     <div>
       <label for="post-carmaker">Car Maker</label>
-      <input type="text" id="post-carmaker" name="post-carmaker" />
+      <input type="text" id="car_maker" name="car_maker" />
     </div>
         <div>
       <label for="post-carmodel">Car Model</label>
-      <input type="text" id="post-carmodel" name="post-carmodel" />
+      <input type="text" id="car_model" name="car_model" />
     </div>
         <div>
       <label for="post-carbody">Car Body</label>
-      <input type="text" id="post-carbody" name="post-carbody" />
+      <input type="text" id="car_body" name="car_body" />
     </div>
     <div>
       <label for="post-img">Your Car Image</label>
-      <input type="file" id="post-img" name="post-img" accept="image/*" />
+      <input type="file" id="car_img" name="car_img" />
     </div>
     <div>
       <label for="post-carbody">Car Review</label>
-      <input type="text" id="post-review" name="post-review" />
+      <input type="text" id="car_review" name="car_review" />
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
